@@ -72,11 +72,9 @@ public class TP8ManagerMatin {
 			}
 		}
 		if (k!=0){
-			System.out.print("true");
 			return true;
 		}
 		else {
-			System.out.print("false");
 			return false;
 		}
 	}
@@ -124,16 +122,17 @@ public class TP8ManagerMatin {
      * QUESTION 3.4.2.2
      **/
     public static int recherche(MaListe l, String v) {
-		while(true)
-			if (l.data.equals(v) ) {
-			MaListe newliste = new MaListe(, l.prenom, l.nom);
+		int i =0;
+		boolean k = true;
+    	while(k){
+			if (l.data.equals(v)){
+				return i;
+			}else if (l.next != null){
+				l=l.next;
 
-
-		} else if (l.suivant != null) {  // Fixed
-			getEtudiant(l.suivant, numero);
-		} else {
-			return -1;
+			}else return -1;
 		}
+
 	}
 
     /**
