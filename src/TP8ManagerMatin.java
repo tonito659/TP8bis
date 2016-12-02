@@ -112,18 +112,29 @@ public class TP8ManagerMatin {
 	}
     }
 
-    public static void affichage(MaListe l)
-    {
-	//return -1;
-    }
+    public static void affichage(MaListe l){
+		if(l.next != null){  // Fixed
+			System.out.println("data = " + l.data);
+			affichage(l.next);
+		}else System.out.println("fin");
+	}
+
     
     /**
      * QUESTION 3.4.2.2
      **/
-    public static int recherche(MaListe l, String v)
-    {
-	return -1;
-    }
+    public static int recherche(MaListe l, String v) {
+		while(true)
+			if (l.data.equals(v) ) {
+			MaListe newliste = new MaListe(, l.prenom, l.nom);
+
+
+		} else if (l.suivant != null) {  // Fixed
+			getEtudiant(l.suivant, numero);
+		} else {
+			return -1;
+		}
+	}
 
     /**
      * QUESTION 3.5.1
