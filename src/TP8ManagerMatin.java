@@ -189,7 +189,6 @@ public class TP8ManagerMatin {
 		int k=0;
 		while(k!=t.length-1){
 			for(int i=k; i<t.length-1; i++){
-				System.out.println("i=" + i);
 				if(t[i]+1 == t[i+1]){
 					p.add(t[i]);
 				}
@@ -198,7 +197,6 @@ public class TP8ManagerMatin {
 					k=i+1;
 					break;
 				}
-				System.out.println("k="+ k);
 			}
 			for (int i =0; i<p.size(); i++){
 				sp= sp + p.get(i); //somme de la liste
@@ -216,16 +214,16 @@ public class TP8ManagerMatin {
 			for (int i=0; i<p.size(); i++){
 				System.out.print( p.get(i)+"\t");
 			}
-			System.out.println(sp);
+			//System.out.println(sp);
 
 			for (int i=0; i<g.size(); i++){
 				System.out.print(g.get(i)+"\t");
 			}
-			System.out.println(sg);
+			//System.out.println(sg);
 
 		}
 		System.out.println("La somme de la suite la plus grande est " + sg);
-		return -1;
+		return sg;
 	}
 	//Seen by Tom Jalabert at 11:59
 
