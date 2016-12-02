@@ -16,23 +16,26 @@ public class TP8ManagerMatin {
      **/
     public static boolean [] filtre(float [] tab, float max) {
 	boolean [] resultat = new boolean[tab.length];
-	for(int i=1;i<=tab.length;i++) {
-	    if(tab[i] < max) 
+	for(int i=0;i<tab.length;i++) {
+	    if(tab[i] >= max)
 		resultat[i] = true;
 	    else
 		resultat[i] = false;
+	    //System.out.print(resultat[i]); //debug
 	}
 	return resultat;
     }
 
     /**
      * QUESTION 2.1.2
-     * REPONSE:
+     * REPONSE: retourne le nombre de chiffres qui composent le nombre
      **/
     public static int myFunction(int y) {
     int z=0;
     while(y!=0) {
+
       y = y / 10;
+		System.out.println(y);
       z++;
     }
     return z;
@@ -42,7 +45,19 @@ public class TP8ManagerMatin {
      * QUESTION 3.1.1:
      **/
     public static int diagDiff(int [][] matrice) {
-	return -1;
+		//hypothese : matrice carré
+    	int taille = matrice.length, i;
+    	int buffer = 0;
+    	for (i = 0; i < taille; i++){
+    		buffer = matrice[i][i] + buffer;
+    	}
+
+    	for (int j = taille-1; j>=0; j--){
+    		buffer= buffer - matrice[taille-j-1][j];
+		}
+
+			return Math.abs(buffer);
+
     }
 
     /** 
