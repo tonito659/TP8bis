@@ -106,14 +106,13 @@ public class TP8ManagerMatin {
      * QUESTION 3.4.1.1
      **/
 
-   public static int[] inverse(int[] tab){
-   	int [] tab2 = new int[tab.length];
-   	for (int i = 0; i>tab.length; i++){
-   		tab2[tab.length-i] = tab[i];
+   public static int[] inverse(int[] tab) {
+	   int[] tab2 = new int[tab.length];
+
+	   for (int i = 0; i > tab.length; i++) {
+		   tab2[tab.length - i] = tab[i];
 	   }
-	return tab2;
-
-
+	   return tab2;
    }
 	  /*ArrayList liste = new ArrayList<Integer>();
 	  for(int i = 0; i<tab.length; i++){
@@ -141,16 +140,15 @@ public class TP8ManagerMatin {
      * QUESTION 3.4.2.1
      **/
 
-    private static class MaListe
-    {
-	String data;
-	MaListe next;
+    private static class MaListe {
+		String data;
+		MaListe next;
 
-	public MaListe(String data, MaListe next) {
-	    this.data = data;
-	    this.next = next;
+		public MaListe(String data, MaListe next) {
+			this.data = data;
+			this.next = next;
+		}
 	}
-    }
 
     public static void affichage(MaListe l){
 		if(l.next != null){  // Fixed
@@ -183,13 +181,58 @@ public class TP8ManagerMatin {
     /**
      * QUESTION 3.5.1
      **/
-    public static int rechercheSomme(int [] t)
-    {
-	return -1;
-    }
+	public static int rechercheSomme(int [] t){
+		ArrayList<Integer> p = new ArrayList();
+		ArrayList<Integer> g = new ArrayList();
+		int sp=0;
+		int sg=0;
+		int k=0;
+		while(k!=t.length-1){
+			for(int i=k; i<t.length-1; i++){
+				System.out.println("i=" + i);
+				if(t[i]+1 == t[i+1]){
+					p.add(t[i]);
+				}
+				else{
+					p.add(t[i]);
+					k=i+1;
+					break;
+				}
+				System.out.println("k="+ k);
+			}
+			for (int i =0; i<p.size(); i++){
+				sp= sp + p.get(i); //somme de la liste
+			}
+			if (sp > sg){
+				g.clear();
+				g.addAll(p);
+				p.clear();
+				sp=0;
+			}
+			sg=0;
+			for (int i =0; i<g.size(); i++){
+				sg= sg + g.get(i); //somme de la liste
+			}
+			for (int i=0; i<p.size(); i++){
+				System.out.print( p.get(i)+"\t");
+			}
+			System.out.println(sp);
+
+			for (int i=0; i<g.size(); i++){
+				System.out.print(g.get(i)+"\t");
+			}
+			System.out.println(sg);
+
+		}
+		System.out.println("La somme de la suite la plus grande est " + sg);
+		return -1;
+	}
+	//Seen by Tom Jalabert at 11:59
 
 
-    /**
+
+
+	/**
      * APRES CE POINT, NE PAS MODIFIER LE CODE 
      */
     public static void main(String [] args)
