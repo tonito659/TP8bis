@@ -1,12 +1,12 @@
 import java.math.*;
 import java.util.Arrays;
 /**
- * NUMERO BINOME 1: 
- * NOM BINOME 1:
- * PRENOM BINOME 1:
- * NUMERO BINOME 2: 
- * NOM BINOME 2:
- * PRENOM BINOME 2:
+ * NUMERO BINOME 1  8700:
+ * NOM BINOME 1: JALABERT
+ * PRENOM BINOME 1: TOM
+ * NUMERO BINOME 2: 8627
+ * NOM BINOME 2: POUSSOT
+ * PRENOM BINOME 2: ANTOINE
  **/
 
 
@@ -86,7 +86,7 @@ public class TP8ManagerMatin {
 
     public static void affichage(MaListe l)
     {
-	return -1
+	//return -1;
     }
     
     /**
