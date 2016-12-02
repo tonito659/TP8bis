@@ -21,7 +21,6 @@ public class TP8ManagerMatin {
 		resultat[i] = true;
 	    else
 		resultat[i] = false;
-	    //System.out.print(resultat[i]); //debug
 	}
 	return resultat;
     }
@@ -35,7 +34,6 @@ public class TP8ManagerMatin {
     while(y!=0) {
 
       y = y / 10;
-		System.out.println(y);
       z++;
     }
     return z;
@@ -82,9 +80,26 @@ public class TP8ManagerMatin {
     /**
      * QUESTION 3.3.1
      **/
-    public static void trier(int [] tab)
-    {
-    }
+    public static void trier(int [] tab) {
+		boolean flag = true;
+		int var;
+		while (flag) {
+			flag = false;
+			for (int i = 0; i < tab.length - 1; i++) {
+				if (tab[i] > tab[i + 1]) {
+					var = tab[i];
+					tab[i] = tab[i + 1];
+					tab[i + 1] = var;
+					flag = true;
+				}
+			}
+		}
+		System.out.println("Voici le tableau trié:");
+		for (int i = 0; i < tab.length; i++) {
+			System.out.print(tab[i] + "\t");
+		}
+		System.out.println("");
+	}
        
 
     /**
@@ -112,9 +127,9 @@ public class TP8ManagerMatin {
 
     public static void affichage(MaListe l){
 		if(l.next != null){  // Fixed
-			System.out.println("data = " + l.data);
+			System.out.println(l.data);
 			affichage(l.next);
-		}else System.out.println("fin");
+		}else System.out.println(l.data);
 	}
 
     
@@ -122,17 +137,20 @@ public class TP8ManagerMatin {
      * QUESTION 3.4.2.2
      **/
     public static int recherche(MaListe l, String v) {
-		int i =0;
+		int i =1;
 		boolean k = true;
     	while(k){
 			if (l.data.equals(v)){
-				return i;
+				k = false;
 			}else if (l.next != null){
 				l=l.next;
-
-			}else return -1;
+				i++;
+			}else {
+				i=-1;
+				k = false;
+			}
 		}
-
+		return i;
 	}
 
     /**
