@@ -65,8 +65,21 @@ public class TP8ManagerMatin {
      **/
     public static boolean find(int [] tab, int nb)
     {
-	return false;
-    }
+		int k=0;
+		for(int i=0;i<tab.length;i++) {
+			if(tab[i] == nb){
+				k++;
+			}
+		}
+		if (k!=0){
+			System.out.print("true");
+			return true;
+		}
+		else {
+			System.out.print("false");
+			return false;
+		}
+	}
 
     /**
      * QUESTION 3.3.1
