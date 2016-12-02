@@ -1,4 +1,5 @@
 import java.math.*;
+import java.util.ArrayList;
 import java.util.Arrays;
 /**
  * NUMERO BINOME 1  8700:
@@ -8,7 +9,6 @@ import java.util.Arrays;
  * NOM BINOME 2: POUSSOT
  * PRENOM BINOME 2: ANTOINE
  **/
-
 
 public class TP8ManagerMatin {
     /**
@@ -105,9 +105,36 @@ public class TP8ManagerMatin {
     /**
      * QUESTION 3.4.1.1
      **/
-   public static void inverse(int [] tab) {
+
+   public static int[] inverse(int[] tab){
+   	int [] tab2 = new int[tab.length];
+   	for (int i = 0; i>tab.length; i++){
+   		tab2[tab.length-i] = tab[i];
+	   }
+	return tab2;
+
 
    }
+	  /*ArrayList liste = new ArrayList<Integer>();
+	  for(int i = 0; i<tab.length; i++){
+	  	liste.add(tab[i]);
+	  }
+	  tab = inversebis(liste).toArray(tab);
+   }
+
+   public static ArrayList<Integer> inversebis(ArrayList<Integer> liste){
+   	if (liste.isEmpty()) {
+   		return liste;
+
+	}
+	int taille = liste.size();
+	int next = liste.get(-1);
+	ArrayList liste2 = new ArrayList<Integer>();
+	liste2.add(next)
+	   return liste.get(-1)
+
+   } */
+
 
 
     /**
